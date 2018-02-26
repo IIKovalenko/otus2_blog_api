@@ -12,6 +12,8 @@ class MiddlewareConfigMixin:
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
     ]
 
 
@@ -35,6 +37,7 @@ class Base(MiddlewareConfigMixin, Configuration):
         'django_extensions',
         'rest_framework',
         'graphene_django',
+        'debug_toolbar',
 
         'blog',
     ]
@@ -96,6 +99,8 @@ class Base(MiddlewareConfigMixin, Configuration):
     GRAPHENE = {
         'SCHEMA': 'blog.schema.schema',
     }
+
+    INTERNAL_IPS = '127.0.0.1'
 
 
 class Dev(Base):

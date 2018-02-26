@@ -19,3 +19,4 @@ landing/public
 landing/dev_build
 local_scripts
 tilda_assets
+*.pyc

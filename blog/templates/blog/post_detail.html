@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block menu_items %}
+  {% for tag in post.tags.all %}
+    <li><a href="">{{ tag.title }}</a></li>
+  {% endfor %}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ post.title }} ({{ post.user.username }})</h1>
+  <p>Author: {{ post.user.username }}</p>
+  <p class="lead">{{ post.body }}</p>
+  <ul>
+  {% for tag in post.tags.all %}
+    <li>{{ tag.title }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

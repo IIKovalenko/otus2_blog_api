@@ -9,5 +9,7 @@ router.register(r'posts', views.PostViewSet)
 
 
 urlpatterns = [
-    url(r'^', include(router.urls))
+    url(r'^posts/$', views.PostListView.as_view(), name='posts_list'),
+    url(r'^posts/(?P<pk>\d+)/$', views.PostDetailView.as_view(), name='post_detail'),
+    url(r'^api/', include(router.urls)),
 ]
